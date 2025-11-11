@@ -1,0 +1,37 @@
+<section class="admin-section">
+  <div class="admin-section-header">
+    <h1>Novo Artigo</h1>
+    <a href="/admin/posts" class="btn-soft">Voltar para lista</a>
+  </div>
+
+  <% if (typeof error !== 'undefined' && error) { %>
+    <p class="error"><%= error %></p>
+  <% } %>
+
+  <form class="form-card" method="POST" action="/admin/posts/novo">
+    <div class="field">
+      <label for="title">Título do artigo</label>
+      <input id="title" name="title" type="text" placeholder="Ex.: Recuperação judicial: primeiros passos para empresas em crise" required />
+    </div>
+
+    <div class="field">
+      <label for="category">Categoria</label>
+      <input id="category" name="category" type="text" placeholder="Ex.: Recuperação Judicial, Direito Empresarial..." />
+    </div>
+
+    <div class="field">
+      <label for="excerpt">Resumo (chamada)</label>
+      <textarea id="excerpt" name="excerpt" rows="2" placeholder="Texto curto para aparecer na listagem do blog."></textarea>
+    </div>
+
+    <div class="field">
+      <label for="content">Conteúdo</label>
+      <textarea id="content" name="content" rows="8" placeholder="Área pronta para o texto completo do artigo. Em breve conectaremos com editor rico."></textarea>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn-primary">Salvar rascunho (fake)</button>
+      <button type="button" class="btn-soft">Pré-visualizar (em breve)</button>
+    </div>
+  </form>
+</section>

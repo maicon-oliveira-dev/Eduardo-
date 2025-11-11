@@ -1,0 +1,20 @@
+<section class="hero">
+  <div class="hero-content">
+    <h1>Blog de Recuperação Judicial e Reestruturação de Empresas</h1>
+    <p>Artigos claros e objetivos para gestores, contadores e empresários que precisam de segurança jurídica em momentos decisivos.</p>
+  </div>
+</section>
+
+<section class="posts-list">
+  <% posts.forEach(function(post){ %>
+    <article class="post-card">
+      <span class="post-category"><%= post.category %></span>
+      <h2><a href="/post/<%= post.slug %>"><%= post.title %></a></h2>
+      <p class="post-meta"><%= post.date %></p>
+      <p class="post-excerpt"><%= post.excerpt %></p>
+      <a href="/post/<%= post.slug %>" class="read-more">Ler artigo completo</a>
+    </article>
+  <% }) %>
+  
+</section>
+

@@ -1,0 +1,47 @@
+<section class="admin-section">
+  <div class="admin-section-header">
+    <h1>Meus Artigos</h1>
+    <a href="/admin/posts/novo" class="btn-primary">+ Novo artigo</a>
+  </div>
+
+  <p class="muted">
+    Lista demonstrativa. Em breve, estes dados virão do banco de dados.
+  </p>
+
+  <div class="table-wrapper">
+    <table class="table-list">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Status</th>
+          <th>Data</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% posts.forEach(function(post){ %>
+          <tr>
+            <td><%= post.title %></td>
+            <td><span class="badge <%= post.status === 'Publicado' ? 'badge-success' : 'badge-draft' %>"><%= post.status %></span></td>
+            <td><%= post.date %></td>
+            <td>
+              <form action="/admin/posts/<%= post.id %>/status" method="POST" class="inline-form">
+                <% if (post.status === 'Publicado') { %>
+                  <input type="hidden" name="status" value="Rascunho" />
+                  <button type="submit" class="link-button">Mover para rascunho</button>
+                <% } else { %>
+                  <input type="hidden" name="status" value="Publicado" />
+                  <button type="submit" class="link-button">Publicar</button>
+                <% } %>
+              </form>
+
+              <form action="/admin/posts/<%= post.id %>/delete" method="POST" class="inline-form">
+                <button type="submit" class="link-button link-danger">Remover</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</section>

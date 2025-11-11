@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/admin.css">
+  </head>
+  <body class="admin-body">
+    <header class="admin-header">
+      <div class="container admin-header-inner">
+        <div class="admin-brand">
+          <div class="admin-logo">ED</div>
+          <div class="admin-brand-text">
+            <span>Painel do Advogado</span>
+            <small>Publicação de artigos jurídicos com segurança</small>
+          </div>
+        </div>
+        <form action="/logout" method="POST">
+          <button type="submit" class="btn-outline">Sair</button>
+        </form>
+      </div>
+    </header>
+
+    <div class="admin-layout">
+      <aside class="admin-sidebar">
+        <nav>
+          <a href="/admin" class="<%= title === 'Painel do Advogado' ? 'active' : '' %>">Visão geral</a>
+          <a href="/admin/posts" class="<%= title === 'Meus Artigos' ? 'active' : '' %>">Meus artigos</a>
+          <a href="/admin/posts/novo" class="<%= title === 'Novo Artigo' ? 'active' : '' %>">Novo artigo</a>
+        </nav>
+      </aside>
+
+      <main class="admin-main">
+        <div class="admin-main-inner container">
+          <%- body %>
+        </div>
+      </main>
+    </div>
+
+    <script src="/js/admin.js"></script>
+  </body>
+</html>

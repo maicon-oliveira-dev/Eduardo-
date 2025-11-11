@@ -1,0 +1,30 @@
+<section class="admin-section">
+  <h1>Bem-vindo, <%= user ? user.name : 'Dr. Especialista' %></h1>
+  <p class="muted">
+    Aqui você acompanha rapidamente seus artigos e acessa atalhos para criar
+    novos conteúdos para o blog.
+  </p>
+
+  <div class="admin-grid">
+    <div class="stat-card">
+      <span class="stat-label">Artigos publicados</span>
+      <span class="stat-value">12</span>
+      <span class="stat-help">Número ilustrativo para demonstração.</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Rascunhos</span>
+      <span class="stat-value">3</span>
+      <span class="stat-help">Espaço pronto para integrar com o banco.</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Última publicação</span>
+      <span class="stat-value">10/11/2025</span>
+      <span class="stat-help">Atualizaremos automaticamente na versão final.</span>
+    </div>
+  </div>
+
+  <div class="admin-actions">
+    <a href="/admin/posts/novo" class="btn-primary">+ Novo artigo</a>
+    <a href="/admin/posts" class="btn-soft">Ver todos os artigos</a>
+  </div>
+</section>
